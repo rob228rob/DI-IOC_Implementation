@@ -1,0 +1,12 @@
+version: '3'
+services:
+  algojava-web:
+    image: algojava-web
+    ports:
+      - 8080:8080
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./target/SimpleServlet-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/SimpleServlet-1.0-SNAPSHOT.war
